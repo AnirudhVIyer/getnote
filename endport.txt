@@ -1,0 +1,47 @@
+kill a port 
+$ lsof -i tcp:3000
+$ kill -9 PID
+
+
+
+// also downloaded dependency for nodemon and changes script,
+// rpm run nodemon, starts the server
+
+// now npm nodemon, calls nodemon, you need to add the file you want to open
+// eg. npm run nodemon(== nodemon) server.js ======> nodemon server.js
+ 
+// while uploading we dont send the node module file
+// once downloaded and node module is missing we can individually download dependencies from package json
+// to download all dependencies, run npm install
+
+
+// deleteing js file to run ejs
+// in ejs <% to insert logic
+// <%= for placeholder
+
+
+
+// Added the styles in the head.ejs partial 
+
+
+// middleware is the code that runs bw request and response, keeps running till aresponse is sent
+// if using middleware in between, use next
+
+
+// All static files that we want the client to acces are put in a public folder
+// this includes external css files that we use in html
+
+
+// to read request add encoding
+
+
+// use parameters in url by : 
+// check routing parameters
+
+// **** DELETE ****
+// use fetch api to delete inside js
+// once deleted we cant render server side html
+// we have to send the REDIRECT /blog inside a json file
+// the client side clode will then remove it, jsonify it and then 
+// display on the browser
+

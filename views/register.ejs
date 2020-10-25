@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; }
+    </style>
+     <!--- Adding the partial header part-->
+             <!-- Site Icons -->
+             <link rel="shortcut icon" href="./images/notes.png" type="image/x-icon" />
+             <link rel="apple-touch-icon" href="#" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GotNote| <%= title %></title>
+        <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+                    <!-- nav partial     REMOVING THE NAV EJS AND CANT HAVE KEY HERE-->
+
+                    <nav>
+                        <div class ='site-title'>
+                            <a class='Heading' href='/'>GotNote</a>
+                            <p>Organize Your Tasks</p>
+                        </div>
+                        
+                        <ul>
+                            
+                            <li></li><a href='/about'>About</a></li>
+                            <li><a href='/register'>Register</a></li>
+                            <li><a href='/login'>Login</a></li>
+                        
+                        </ul>
+                        </nav>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+
+
+
+    <h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form action="/register" method="post">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+    </form>
+
+    <hr>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+   
+
+
+
+    <hr>
+         <!-- Footer Partial-->
+<%- include("./partials/footer.ejs") %> 
+
+
+</div>
+</div>
+</body>
+</html>

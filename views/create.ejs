@@ -1,0 +1,38 @@
+<html>
+
+<!-- Head Partial-->
+<%- include("./partials/head.ejs") %>
+
+    <body>
+
+
+
+            <!-- nav partial-->
+
+            <%- include("./partials/nav.ejs") %>
+
+<div class='create-blog content'>
+    <form  action ='/blogs/<%=key%>' method='POST'> <!-- This will take action and post this data send to /Blogs url as post method-->
+        <label for = 'title'>TITLE</label>
+        <input type='text' id='title' name='title' required>
+        <label for = 'snippet'>Snippet</label>
+        <input type='text' id='snippet' name='snippet' required>
+        <label for = 'body'>Blog Body</label>
+        <textarea , id='body' name='body' required></textarea>
+        <button>Submit</button>
+
+
+    </form>
+
+</div>
+
+
+    
+
+
+     <!-- Footer Partial-->
+<%- include("./partials/footer.ejs") %>   
+
+ 
+    </body>
+</html>

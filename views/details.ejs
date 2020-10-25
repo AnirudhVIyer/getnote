@@ -1,0 +1,80 @@
+<html>
+
+<!-- Head Partial-->
+<%- include("./partials/head.ejs") %>
+
+
+
+<body>
+
+
+ <!-- nav partial-->
+
+ <%- include("./partials/nav.ejs") %>
+
+ <div class = "Blog-Content details">
+     <h2 class='title-single' ><%= blog.title %></h2>
+     <h4 class='snippet-single'><%= blog.snippet%></h4>
+     
+
+     <div>
+
+
+     <p class='content'><%= blog.body %></p>
+
+     </div>
+
+     <a class='delete' data-doc="<%= blog._id %>">delete</a>
+
+
+
+ </div>
+
+
+
+
+
+
+
+ <!-- Footer Partial-->
+<%- include("./partials/footer.ejs") %>   
+
+<script>
+    const id = "<%= blog._id %>";
+    const key = '<%= blog.email %>';
+   // const endpoint = '/blogs/<%=blog._id%>';
+    
+    
+    const trash = document.querySelector('.delete');
+    console.log(id);
+
+    const afterclick = async ()=>{
+        const endpoint = '/blogs/'+key+'/'+id;
+        
+        let response = await fetch(endpoint,{method:'DELETE'});
+        
+        let data = await response.json();
+        console.log(data);
+        window.location.href = data.redirect;
+        
+
+    };
+    
+    trash.addEventListener('click', afterclick);
+
+
+
+
+
+</script>
+
+    
+
+
+
+
+
+</body>
+
+
+</html>
